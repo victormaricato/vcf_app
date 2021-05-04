@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="gene_query">
+<p id="datalist"></p>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#gene_query").on("input", function (e) {
+            $("#datalist").empty();
+            $.ajax({
+                method: "post",
+                url: "/gene_query",
+                data: {text: $("#gene_query").val()},
+                success: function (res) {
+                    $("#datalist").html(res);
+                    console.log(res)
+                }
+            });
+        });
+    });
+</script>
