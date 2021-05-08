@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS variants;
+create table variants
+(
+    chromosome varchar(2)  not null,
+    position   int         not null,
+    rsid       varchar(32) not null,
+    ref        varchar(32),
+    alt        varchar(32),
+    info       varchar(256),
+    PRIMARY KEY (chromosome, position)
+) PARTITION BY LIST(chromosome);
+
+CREATE TABLE chr1 PARTITION OF variants FOR VALUES IN ('1');
+CREATE TABLE chr2 PARTITION OF variants FOR VALUES IN ('2');
+CREATE TABLE chr3 PARTITION OF variants FOR VALUES IN ('3');
+CREATE TABLE chr4 PARTITION OF variants FOR VALUES IN ('4');
+CREATE TABLE chr5 PARTITION OF variants FOR VALUES IN ('5');
+CREATE TABLE chr6 PARTITION OF variants FOR VALUES IN ('6');
+CREATE TABLE chr7 PARTITION OF variants FOR VALUES IN ('7');
+CREATE TABLE chr8 PARTITION OF variants FOR VALUES IN ('8');
+CREATE TABLE chr9 PARTITION OF variants FOR VALUES IN ('9');
+CREATE TABLE chr10 PARTITION OF variants FOR VALUES IN ('10');
+CREATE TABLE chr11 PARTITION OF variants FOR VALUES IN ('11');
+CREATE TABLE chr12 PARTITION OF variants FOR VALUES IN ('12');
+CREATE TABLE chr13 PARTITION OF variants FOR VALUES IN ('13');
+CREATE TABLE chr14 PARTITION OF variants FOR VALUES IN ('14');
+CREATE TABLE chr15 PARTITION OF variants FOR VALUES IN ('15');
+CREATE TABLE chr16 PARTITION OF variants FOR VALUES IN ('16');
+CREATE TABLE chr17 PARTITION OF variants FOR VALUES IN ('17');
+CREATE TABLE chr18 PARTITION OF variants FOR VALUES IN ('18');
+CREATE TABLE chr19 PARTITION OF variants FOR VALUES IN ('19');
+CREATE TABLE chr20 PARTITION OF variants FOR VALUES IN ('20');
+CREATE TABLE chr21 PARTITION OF variants FOR VALUES IN ('21');
+CREATE TABLE chr22 PARTITION OF variants FOR VALUES IN ('22');
+CREATE TABLE chrX PARTITION OF variants FOR VALUES IN ('X');
+CREATE TABLE chrY PARTITION OF variants FOR VALUES IN ('Y');

@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  backend:
+    container_name: "vcf-app-backend"
+    build:
+      context: .
+    ports:
+      - "4242:4242"
+    entrypoint: uvicorn
+    command: [ "backend.app:app", "--reload", "--host", "0.0.0.0", "--port", "6000" ]
+  postgres:
+    image: postgres
+    container_name: gp-psql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
