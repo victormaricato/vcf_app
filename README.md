@@ -12,7 +12,7 @@ You will require [Docker](https://docs.docker.com/engine/) and [docker-compose](
 Also, you will need Python and Make installed in your machine due to the "database population" script.
 
 ```
-1. Put the desired `{}.vcf.gz` inside `database/data`
+1. Put the desired `{}.vcf.gz` inside `database/data` and check if name in `Makefile` "run" stage matches yours.
 3. make run
 ```
 
