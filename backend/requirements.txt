@@ -1,0 +1,5 @@
+flask
+fastapi[all]
+sqlalchemy
+psycopg2-binary
+pydantic-sqlalchemy

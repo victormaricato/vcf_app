@@ -1,4 +1,0 @@
-flask
-fastapi[all]
-sqlalchemy
-psycopg2-binary

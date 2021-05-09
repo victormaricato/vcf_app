@@ -13,8 +13,8 @@
             $("#gene_result").empty();
             $.ajax({
                 method: "get",
-                url: "http://127.0.0.1:5600/query",
-                data: {q: $("#gene_query").val()},
+                url: "http://127.0.0.1:4242/query",
+                data: {query: $("#gene_query").val()},
                 success: function (res) {
                     $("#gene_result").html(res);
                     console.log(res)

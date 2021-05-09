@@ -4,10 +4,13 @@ services:
     container_name: "vcf-app-backend"
     build:
       context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "4242:4242"
+    volumes:
+      - ./backend:/app/backend
     entrypoint: uvicorn
-    command: [ "backend.app:app", "--reload", "--host", "0.0.0.0", "--port", "6000" ]
+    command: [ "backend.app:app", "--reload", "--host", "0.0.0.0", "--port", "4242" ]
   postgres:
     image: postgres
     container_name: gp-psql
