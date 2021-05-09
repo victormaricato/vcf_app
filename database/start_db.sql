@@ -3,9 +3,9 @@ create table variants
 (
     chromosome varchar(2)  not null,
     position   int         not null,
-    rsid       varchar(32) not null,
-    ref        varchar(32),
-    alt        varchar(32),
+    rsid       varchar(256) not null,
+    ref        varchar(256),
+    alt        varchar(256),
     info       varchar(256),
     PRIMARY KEY (chromosome, position)
 ) PARTITION BY LIST(chromosome);

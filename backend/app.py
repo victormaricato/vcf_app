@@ -33,15 +33,37 @@ def get_db():
 
 @app.get("/query", response_model=models.PydanticVariant)
 def query(query: str, db: Session = Depends(get_db)) -> models.PydanticVariant:
-    parsed_query = parse_query(query)
-    if len(parsed_query) == 2:
+    """
+    Given an query of chromosome, position or rsid, return the variant from the database.
+    Args:
+        query: Can be either a two strings, consisting of chromosome and position, or a single string, which should be the RSID.
+
+    Returns:
+        Loaded variant from the database.
+    """
+    parsed_query = _parse_query(query)
+    variant = _get_variant_by_query(db, parsed_query)
+    if not variant:
+        raise ValueError(f"Invalid query {query}")
+    return variant
+
+
+def _parse_query(q: str) -> Union[str, list[str]]:
+    return q.split(" ")
+
+
+def _get_variant_by_query(db: Session, parsed_query: Union[str, list[str]]) -> Optional[models.PydanticVariant]:
+    if _is_chr_and_pos(parsed_query):
         chromosome, position = parsed_query
         return query_by_chr_and_pos(db, chromosome, position)
-    if len(parsed_query) == 1:
+    if _is_rsid(parsed_query):
         rsid = parsed_query[0]
         return query_by_rsid(db, rsid)
-    raise ValueError(f"Invalid query {q}")
 
 
-def parse_query(q: str) -> Union[str, list[str]]:
-    return q.split(" ")
+def _is_rsid(parsed_query: Union[str, list[str]]) -> bool:
+    return len(parsed_query) == 1
+
+
+def _is_chr_and_pos(parsed_query: Union[str, list[str]]) -> bool:
+    return len(parsed_query) == 2

@@ -5,6 +5,7 @@
 </head>
 <body>
 <input type="text" id="gene_query">
+<p id="failed"></p>
 <p id="chromosome"></p>
 <p id="position"></p>
 <p id="rsid"></p>
@@ -21,13 +22,23 @@
                 url: "http://127.0.0.1:4242/query",
                 data: {query: $("#gene_query").val()},
                 success: function (res) {
-                    $("#chromosome").html("CHROMOSOME: " + res.chromosome);
-                    $("#position").html("POSITION: " + res.position);
-                    $("#rsid").html("RSID: " + res.rsid);
-                    $("#ref").html("REF: " + res.ref);
-                    $("#alt").html("ALT: " + res.alt);
-                    $("#info").html("INFO: " + res.info);
+                    $("#failed").text("Variant found:");
+                    $("#chromosome").text("CHROMOSOME: " + res.chromosome);
+                    $("#position").text("POSITION: " + res.position);
+                    $("#rsid").text("RSID: " + res.rsid);
+                    $("#ref").text("REF: " + res.ref);
+                    $("#alt").text("ALT: " + res.alt);
+                    $("#info").text("INFO: " + res.info);
                     console.log(res)
+                },
+                error: function (res) {
+                    $("#failed").text("Variant not found");
+                    $("#chromosome").text("");
+                    $("#position").text("");
+                    $("#rsid").text("");
+                    $("#ref").text("");
+                    $("#alt").text("");
+                    $("#info").text("");
                 }
             });
         });

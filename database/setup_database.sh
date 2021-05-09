@@ -2,7 +2,7 @@
 set -euxo pipefail
 
 file=$1
-db=$(docker ps -aqf "name=gp-psql")
+db=$(docker ps -aqf "name=postgres")
 
 cat database/start_db.sql | docker exec -i $db psql -U postgres
 
