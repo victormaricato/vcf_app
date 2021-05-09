@@ -42,3 +42,5 @@ At first, the database of choice was [tiledb-vcf](https://github.com/TileDB-Inc/
 
 [FastAPI](https://fastapi.tiangolo.com/) was chosen due to its increased speed when compared with Flask and web2py frameworks. As a plus, FastAPI allows for easy in-code documentation with pydantic models and schemas. Moreover, FastAPI offers several layers of compatibility with PostgreSQL through SQLAlchemy and Pydantic.
 
+### Security & Auth
+It is simple to add [OAuth2 with FastAPI](https://fastapi.tiangolo.com/tutorial/security/first-steps/). However, it was not added to this project for simplicity.
