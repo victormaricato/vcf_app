@@ -13,7 +13,8 @@ Also, you will need Python and Make installed in your machine due to the "databa
 
 ```
 1. Put the desired `{}.vcf.gz` inside `database/data`
-3. make run file=database/data/sample.vcf.gz
+2. make run file=database/data/sample.vcf.gz
+
 # or use full dataset: database/data/hg37variants1000g.vcf.gz
 ```
 
@@ -42,3 +43,5 @@ At first, the database of choice was [tiledb-vcf](https://github.com/TileDB-Inc/
 
 [FastAPI](https://fastapi.tiangolo.com/) was chosen due to its increased speed when compared with Flask and web2py frameworks. As a plus, FastAPI allows for easy in-code documentation with pydantic models and schemas. Moreover, FastAPI offers several layers of compatibility with PostgreSQL through SQLAlchemy and Pydantic.
 
+### Security & Auth
+It is simple to add [OAuth2 with FastAPI](https://fastapi.tiangolo.com/tutorial/security/first-steps/). However, it was not added to this project for simplicity.
