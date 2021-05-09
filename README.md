@@ -13,7 +13,8 @@ Also, you will need Python and Make installed in your machine due to the "databa
 
 ```
 1. Put the desired `{}.vcf.gz` inside `database/data`
-3. make run file=database/data/sample.vcf.gz
+2. make run file=database/data/sample.vcf.gz
+
 # or use full dataset: database/data/hg37variants1000g.vcf.gz
 ```
 
