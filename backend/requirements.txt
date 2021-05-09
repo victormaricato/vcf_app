@@ -1,5 +1,5 @@
-flask
-fastapi[all]
-sqlalchemy
-psycopg2-binary
-pydantic-sqlalchemy
+flask==1.1.2
+fastapi[all]==0.63.0
+sqlalchemy==1.4.14
+psycopg2-binary==2.8.6
+pydantic-sqlalchemy==0.0.8.post1
