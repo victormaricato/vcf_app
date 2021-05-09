@@ -25,6 +25,13 @@ If you used the default `.vcf.gz` provided, you can test the frontend with: `1 1
 
 ![Peek 2021-05-09 00-53](https://user-images.githubusercontent.com/11489228/117560078-01983280-b061-11eb-951c-0ac3f94f4a41.gif)
 
+## Sampling VCF
+
+Run:
+
+`zcat database/data/hg37variants1000g.vcf.gz | head -n {NEW_SIZE} |  bgzip > database/data/sample.vcf.gz`
+
+
 # Coding Decisions
 
 ## Database
@@ -33,5 +40,5 @@ At first, the database of choice was [tiledb-vcf](https://github.com/TileDB-Inc/
 
 ## API
 
-FastAPI was chosen due to its increased speed when compared with Flask and web2py frameworks. As a plus, FastAPI allows for easy in-code documentation with pydantic models and schemas. Moreover, FastAPI offers several layers of compatibility with PostgreSQL through SQLAlchemy and Pydantic.
+[FastAPI](https://fastapi.tiangolo.com/) was chosen due to its increased speed when compared with Flask and web2py frameworks. As a plus, FastAPI allows for easy in-code documentation with pydantic models and schemas. Moreover, FastAPI offers several layers of compatibility with PostgreSQL through SQLAlchemy and Pydantic.
 
