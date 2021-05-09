@@ -5,7 +5,12 @@
 </head>
 <body>
 <input type="text" id="gene_query">
-<p id="gene_result"></p>
+<p id="chromosome"></p>
+<p id="position"></p>
+<p id="rsid"></p>
+<p id="ref"></p>
+<p id="alt"></p>
+<p id="info"></p>
 </body>
 <script>
     $(document).ready(function () {
@@ -16,7 +21,12 @@
                 url: "http://127.0.0.1:4242/query",
                 data: {query: $("#gene_query").val()},
                 success: function (res) {
-                    $("#gene_result").html(res);
+                    $("#chromosome").html("CHROMOSOME: " + res.chromosome);
+                    $("#position").html("POSITION: " + res.position);
+                    $("#rsid").html("RSID: " + res.rsid);
+                    $("#ref").html("REF: " + res.ref);
+                    $("#alt").html("ALT: " + res.alt);
+                    $("#info").html("INFO: " + res.info);
                     console.log(res)
                 }
             });
