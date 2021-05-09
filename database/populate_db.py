@@ -12,7 +12,7 @@ engine = create_engine('postgresql://postgres:1234@localhost:5432')
 def main() -> None:
     vcf = read_vcf("database/data/unziped.vcf")
     restructured_vcf = reformat(vcf)
-    restructured_vcf.to_sql("variants", engine, if_exists="append", index=False)
+    restructured_vcf.to_sql("variants", engine, if_exists="append", index=False, chunksize=1_000)
 
 
 def read_vcf(path: str):

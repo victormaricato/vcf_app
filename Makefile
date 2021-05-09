@@ -7,5 +7,5 @@
 run: install
 	docker-compose up -d
 	echo "Giving a time for docker to complete startup..." && sleep 3
-	./database/setup_database.sh database/data/sample.vcf.gz
+	./database/setup_database.sh $(file)
 	echo "Access the app at: http://127.0.0.1:4243"
