@@ -11,6 +11,17 @@ services:
       - ./backend:/app/backend
     entrypoint: uvicorn
     command: [ "backend.app:app", "--reload", "--host", "0.0.0.0", "--port", "4242" ]
+  frontend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      - FLASK_APP=app.py
+    ports:
+      - "4243:4243"
+    volumes:
+      - ./frontend:/app
+    command: [ "flask", "run", "--host", "0.0.0.0", "--port", "4243"]
   postgres:
     image: postgres
     container_name: gp-psql
