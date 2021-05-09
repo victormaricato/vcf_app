@@ -12,8 +12,9 @@ You will require [Docker](https://docs.docker.com/engine/) and [docker-compose](
 Also, you will need Python and Make installed in your machine due to the "database population" script.
 
 ```
-1. Put the desired `{}.vcf.gz` inside `database/data` and check if name in `Makefile` "run" stage matches yours.
-3. make run
+1. Put the desired `{}.vcf.gz` inside `database/data`
+3. make run file=database/data/sample.vcf.gz
+# or use full dataset: database/data/hg37variants1000g.vcf.gz
 ```
 
 `make run` will install the requirements, start containers for database, frontend and backend, then it will populate the database.
