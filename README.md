@@ -23,8 +23,7 @@ Access the frontend at: http://127.0.0.1:4243 and the swagger UI at: http://127.
 
 If you used the default `.vcf.gz` provided, you can test the frontend with: `1 10177` or `rs540431307` (different variant)
 
-![Peek 2021-05-08 23-33](https://user-images.githubusercontent.com/11489228/117558686-d52ae900-b055-11eb-900d-37d7401bbcfb.gif)
-
+![Peek 2021-05-09 00-53](https://user-images.githubusercontent.com/11489228/117560078-01983280-b061-11eb-951c-0ac3f94f4a41.gif)
 
 # Coding Decisions
 
