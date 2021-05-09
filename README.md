@@ -13,11 +13,10 @@ Also, you will need Python and Make installed in your machine due to the "databa
 
 ```
 1. Put the desired `{}.vcf.gz` inside `database/data`
-2. pip install -r database/requirements.txt
 3. make run
 ```
 
-`make run` will start the database, frontend and backend containers, and then it will populate the database.
+`make run` will install the requirements, start containers for database, frontend and backend, then it will populate the database.
 
 Access the frontend at: http://127.0.0.1:4243 and the swagger UI at: http://127.0.0.1:4242/docs.
 
