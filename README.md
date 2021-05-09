@@ -19,7 +19,7 @@ Also, you will need Python and Make installed in your machine due to the "databa
 
 `make run` will start the database, frontend and backend containers, and then it will populate the database.
 
-Access the frontend at: http://127.0.0.1:4243 and the swagger UI at: http://127.0.0.1:4242.
+Access the frontend at: http://127.0.0.1:4243 and the swagger UI at: http://127.0.0.1:4242/docs.
 
 If you used the default `.vcf.gz` provided, you can test the frontend with: `1 10177` or `rs540431307` (different variant)
 
